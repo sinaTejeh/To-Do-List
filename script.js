@@ -4,11 +4,18 @@ const input = document.querySelector('.input-box');
 const addBtn = document.querySelector('.add-btn');
 const listContainer = document.querySelector('.list');
 
-let count = 0;
 //////////////////////////////////////
+const render = function (data) {
+    const html = `  <li class="li">
+                        <button class="check">⚪</button>
+                      ${data}
+                        <button class="close">&times</button>
+                    </li>`;
+    listContainer.insertAdjacentHTML('afterend', html);
+}
 
 addBtn.addEventListener('click', function () {
-    count++;
+
     const data = input.value;
     console.log(data);
     if (input.value === '') {
@@ -16,8 +23,7 @@ addBtn.addEventListener('click', function () {
         input.value = '';
         return;
     }
-    const html = `<li class="li"><button class="check">⚪</button>${count}. ${data}<button class="close">&times</button></li>`;
-    listContainer.insertAdjacentHTML('afterend', html);
+    render(data);
     //clear input box
     input.value = '';
 
@@ -32,6 +38,6 @@ addBtn.addEventListener('click', function () {
     const closeBtn = document.querySelector('.close');
     closeBtn.addEventListener('click', function () {
         closeBtn.parentElement.remove();
-    })
+    });
 });
 
