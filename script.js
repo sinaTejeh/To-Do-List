@@ -18,7 +18,7 @@ addBtn.addEventListener('click', function () {
 
     const data = input.value;
     console.log(data);
-    if (input.value === '') {
+    if (!input.value) {
         alert('you have to write s.th');
         input.value = '';
         return;
