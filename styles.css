@@ -83,7 +83,7 @@ body {
 .list li .checkbox {
     min-width: 25px;
     height: 25px;
-    border: 2px solid rgb(24, 23, 23);
+    border: 2px solid rgb(54, 52, 52);
     background: transparent;
     appearance: none;
     cursor: pointer;
@@ -93,6 +93,7 @@ body {
 
 .list li .checkbox:checked {
     background: linear-gradient(135deg, #f5220a, #ee4937);
+    border: 2px solid #f5220a;
 }
 
 .list li .checkbox:checked::before {
@@ -110,6 +111,15 @@ body {
     margin-left: 10px;
     font-size: 18px;
     font-weight: 600;
+}
+
+.list li.done {
+    background: linear-gradient(135deg, rgb(221, 232, 248), rgb(235, 238, 247));
+}
+
+.list li.done span {
+    text-decoration: 2px line-through black;
+    color: rgb(27, 27, 27);
 }
 
 .close {
@@ -146,6 +156,26 @@ body {
     transform: rotate(90deg);
 }
 
+.apply {
+    margin-right: 95px;
+    border: none;
+    background: transparent;
+    right: 0;
+    position: absolute;
+    top: 1px;
+    font-size: 28px;
+    color: black;
+    padding-top: 1px;
+    cursor: pointer;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    text-align: center;
+    align-items: center;
+    transform: rotate(45deg);
+    display: none;
+}
+
 .close:hover {
     background-color: #dfe3ec;
     font-size: 1.7rem;
@@ -154,4 +184,9 @@ body {
 .edit:hover {
     background-color: #dfe3ec;
     font-size: 1.3rem;
+}
+
+.apply:hover {
+    background-color: #dfe3ec;
+    font-size: 1.8rem;
 }
